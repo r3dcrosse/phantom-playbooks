@@ -1,4 +1,5 @@
 """
+This playbook performs a geolocate ip action on 8.8.8.8
 """
 
 import phantom.rules as phantom

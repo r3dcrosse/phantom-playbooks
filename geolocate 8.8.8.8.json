@@ -6,8 +6,8 @@
         "data": {
             "clean": true,
             "code_block": "",
-            "description": "",
-            "hash": "9ceb41fb7b7631782fc19048d9528ac4e4a1bd44",
+            "description": "This playbook performs a geolocate ip action on 8.8.8.8",
+            "hash": "5348debc3f9637cad42cbf2d05075243f90baf29",
             "joint": {
                 "cells": [
                     {
@@ -36,8 +36,7 @@
                                 "opacity": 0
                             },
                             "g.notes": {
-                                "display": "none",
-                                "opacity": 1
+                                "display": "none"
                             },
                             "rect.warn-background": {
                                 "fill": "#FFFFFF"
@@ -67,8 +66,8 @@
                         "join_code": "# read-only block view not available",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 16,
-                        "line_start": 8,
+                        "line_end": 17,
+                        "line_start": 9,
                         "name": "",
                         "notes": "",
                         "number": 0,
@@ -138,7 +137,6 @@
                             "height": 48,
                             "width": 96
                         },
-                        "state": "start",
                         "status": "",
                         "title": "START",
                         "type": "coa.StartEnd",
@@ -169,8 +167,7 @@
                                 "opacity": 0
                             },
                             "g.notes": {
-                                "display": "none",
-                                "opacity": 1
+                                "display": "none"
                             },
                             "rect.warn-background": {
                                 "fill": "#FFFFFF"
@@ -202,8 +199,8 @@
                         "join_code": "# read-only block view not available",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 45,
-                        "line_start": 32,
+                        "line_end": 46,
+                        "line_start": 33,
                         "name": "",
                         "notes": "",
                         "number": 0,
@@ -271,7 +268,6 @@
                             "height": 48,
                             "width": 96
                         },
-                        "state": "end",
                         "status": "",
                         "title": "END",
                         "type": "coa.StartEnd",
@@ -522,6 +518,9 @@
                             ".background": {
                                 "height": 88
                             },
+                            ".border": {
+                                "height": 88
+                            },
                             ".color-band": {
                                 "fill": "#654796"
                             },
@@ -596,8 +595,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 32,
-                        "line_start": 16,
+                        "line_end": 33,
+                        "line_start": 17,
                         "message": "",
                         "name": "geolocate ip",
                         "notes": "",
@@ -663,9 +662,7 @@
                         },
                         "previous_function": "",
                         "previous_name": "geolocate_ip_1",
-                        "required_params": {
-                            "ip": true
-                        },
+                        "required_params": {},
                         "reviewer": "",
                         "show_number": false,
                         "size": {
@@ -676,7 +673,7 @@
                         "status": "",
                         "title": "Investigate",
                         "type": "coa.Action",
-                        "warn": "",
+                        "warn": false,
                         "z": 5
                     }
                 ]
@@ -686,7 +683,7 @@
         "schema": 2,
         "version": "3.5.62"
     },
-    "create_time": "2018-01-04T19:39:00.876649+00:00",
+    "create_time": "2018-01-04T19:44:16.037518+00:00",
     "draft_mode": false,
     "labels": [
         "*"
