@@ -7,7 +7,6 @@
             "clean": true,
             "code_block": "",
             "description": "This playbook performs a geolocate ip action on 8.8.8.8",
-            "hash": "469bc0833602d8808ccb038d4b5194ad469d1b27",
             "joint": {
                 "cells": [
                     {
@@ -671,8 +670,8 @@
                             }
                         },
                         "position": {
-                            "x": 500,
-                            "y": 240
+                            "x": 560,
+                            "y": 160
                         },
                         "previous_function": "",
                         "previous_name": "geolocate_ip_1",
