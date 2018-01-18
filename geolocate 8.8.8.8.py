@@ -26,8 +26,8 @@ def geolocate_ip_1(action=None, success=None, container=None, results=None, hand
         'ip': "8.8.8.8",
     })
 
-    phantom.act("geolocate ip", parameters=parameters, assets=['hackertarget','maxmind'], name="geolocate_ip_1")    
-    
+    phantom.act("geolocate ip", parameters=parameters, assets=['hackertarget','maxmind'], name="geolocate_ip_1")
+
     return
 
 def on_finish(container, summary):

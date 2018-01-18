@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "This playbook performs a geolocate ip action on 8.8.8.8",
-            "hash": "5348debc3f9637cad42cbf2d05075243f90baf29",
+            "hash": "469bc0833602d8808ccb038d4b5194ad469d1b27",
             "joint": {
                 "cells": [
                     {
@@ -30,19 +30,21 @@
                                 }
                             },
                             ".title": {
+                                "ref-x": 33,
                                 "text": "START"
+                            },
+                            "g.delete": {
+                                "display": "none"
                             },
                             "g.error": {
                                 "opacity": 0
                             },
+                            "g.icon image": {
+                                "ref-x": 13,
+                                "xlink:href": "/inc/coa/img/block_icon_start.svg"
+                            },
                             "g.notes": {
-                                "display": "none"
-                            },
-                            "rect.warn-background": {
-                                "fill": "#FFFFFF"
-                            },
-                            "text.icon": {
-                                "color": "#FFFFFF"
+                                "display": "block"
                             }
                         },
                         "block_code": "def on_start(container):\n    phantom.debug('on_start() called')\n    \n    # call 'geolocate_ip_1' block\n    geolocate_ip_1(container=container)\n\n    return",
@@ -134,8 +136,8 @@
                         "previous_name": "",
                         "show_number": true,
                         "size": {
-                            "height": 48,
-                            "width": 96
+                            "height": 54,
+                            "width": 80
                         },
                         "status": "",
                         "title": "START",
@@ -163,17 +165,17 @@
                             ".title": {
                                 "text": "END"
                             },
+                            "g.delete": {
+                                "display": "none"
+                            },
                             "g.error": {
                                 "opacity": 0
                             },
+                            "g.icon image": {
+                                "xlink:href": "/inc/coa/img/block_icon_end.svg"
+                            },
                             "g.notes": {
-                                "display": "none"
-                            },
-                            "rect.warn-background": {
-                                "fill": "#FFFFFF"
-                            },
-                            "text.icon": {
-                                "color": "#FFFFFF"
+                                "display": "block"
                             }
                         },
                         "block_code": "def on_finish(container, summary):\n    phantom.debug('on_finish() called')\n    # This function is called after all actions are completed.\n    # summary of all the action and/or all detals of actions \n    # can be collected here.\n\n    # summary_json = phantom.get_summary()\n    # if 'result' in summary_json:\n        # for action_result in summary_json['result']:\n            # if 'action_run_id' in action_result:\n                # action_results = phantom.get_action_results(action_run_id=action_result['action_run_id'], result_data=False, flatten=False)\n                # phantom.debug(action_results)\n\n    return",
@@ -265,8 +267,8 @@
                         "previous_name": "",
                         "show_number": true,
                         "size": {
-                            "height": 48,
-                            "width": 96
+                            "height": 54,
+                            "width": 80
                         },
                         "status": "",
                         "title": "END",
@@ -323,14 +325,19 @@
                             "ip": "8.8.8.8"
                         },
                         "angle": 0,
+                        "app": "",
                         "approver": "",
                         "assets": [
                             {
+                                "action": "",
+                                "active": true,
                                 "app_name": "HackerTarget",
                                 "app_version": "1.0.14",
+                                "config_type": "asset",
                                 "fields": {
                                     "ip": "8.8.8.8"
                                 },
+                                "id": "-",
                                 "name": "hackertarget",
                                 "output": [
                                     {
@@ -413,14 +420,19 @@
                                     }
                                 ],
                                 "product_name": "HackerTarget",
-                                "product_vendor": "HackerTarget"
+                                "product_vendor": "HackerTarget",
+                                "type": ""
                             },
                             {
+                                "action": "",
+                                "active": true,
                                 "app_name": "MaxMind",
                                 "app_version": "1.2.19",
+                                "config_type": "asset",
                                 "fields": {
                                     "ip": "8.8.8.8"
                                 },
+                                "id": "-",
                                 "name": "maxmind",
                                 "output": [
                                     {
@@ -508,15 +520,13 @@
                                     }
                                 ],
                                 "product_name": "GeoIP2",
-                                "product_vendor": "MaxMind"
+                                "product_vendor": "MaxMind",
+                                "type": ""
                             }
                         ],
                         "attrs": {
                             ".action": {
                                 "text": "geolocate ip"
-                            },
-                            ".background": {
-                                "height": 88
                             },
                             ".border": {
                                 "height": 88
@@ -535,9 +545,10 @@
                                 }
                             },
                             ".message": {
+                                "opacity": 0,
                                 "ref-x": 16,
                                 "ref-y": 70,
-                                "text": ""
+                                "text": "Configuring now"
                             },
                             ".outPorts>.port-out": {
                                 "ref": ".background",
@@ -556,11 +567,14 @@
                             ".title": {
                                 "text": "Investigate"
                             },
+                            "g.delete": {
+                                "display": "none"
+                            },
                             "g.error": {
                                 "opacity": 0
                             },
                             "g.notes": {
-                                "display": "none",
+                                "display": "block",
                                 "opacity": 1
                             },
                             "rect.warn-background": {
@@ -570,7 +584,7 @@
                                 "fill": "#FFFFFF"
                             }
                         },
-                        "block_code": "def geolocate_ip_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('geolocate_ip_1() called')\n\n    # collect data for 'geolocate_ip_1' call\n\n    parameters = []\n    \n    # build parameters list for 'geolocate_ip_1' call\n    parameters.append({\n        'ip': \"8.8.8.8\",\n    })\n\n    phantom.act(\"geolocate ip\", parameters=parameters, assets=['hackertarget','maxmind'], name=\"geolocate_ip_1\")    \n    \n    return",
+                        "block_code": "def geolocate_ip_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('geolocate_ip_1() called')\n\n    # collect data for 'geolocate_ip_1' call\n\n    parameters = []\n    \n    # build parameters list for 'geolocate_ip_1' call\n    parameters.append({\n        'ip': \"8.8.8.8\",\n    })\n\n    phantom.act(\"geolocate ip\", parameters=parameters, assets=['hackertarget','maxmind'], name=\"geolocate_ip_1\")\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": true,
@@ -597,7 +611,7 @@
                         "join_start": 1,
                         "line_end": 33,
                         "line_start": 17,
-                        "message": "",
+                        "message": "Configuring now",
                         "name": "geolocate ip",
                         "notes": "",
                         "number": 1,
@@ -681,9 +695,9 @@
             "notes": ""
         },
         "schema": 2,
-        "version": "3.5.62"
+        "version": "10206.1.23"
     },
-    "create_time": "2018-01-04T19:44:16.037518+00:00",
+    "create_time": "2018-01-18T01:22:17.327219+00:00",
     "draft_mode": false,
     "labels": [
         "*"
