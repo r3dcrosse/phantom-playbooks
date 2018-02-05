@@ -9,8 +9,8 @@ from datetime import datetime, timedelta
 def on_start(container):
     phantom.debug('on_start() called')
     
-    # call 'prompt_1' block
-    prompt_1(container=container)
+    # call 'DogedogeDogedogeDogedogeDogedogeDogedoge' block
+    DogedogeDogedogeDogedogeDogedogeDogedoge(container=container)
 
     # call 'prompt_2' block
     prompt_2(container=container)
@@ -18,16 +18,22 @@ def on_start(container):
     # call 'prompt_3' block
     prompt_3(container=container)
 
+    # call 'task_1' block
+    task_1(container=container)
+
     return
 
-def prompt_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
-    phantom.debug('prompt_1() called')
+"""
+DogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedoge
+"""
+def DogedogeDogedogeDogedogeDogedogeDogedoge(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+    phantom.debug('DogedogeDogedogeDogedogeDogedogeDogedoge() called')
     
     # set user and message variables for phantom.prompt call
     user = "Administrator"
     message = """Prompt for administrator..."""
 
-    phantom.prompt(container=container, user=user, message=message, respond_in_mins=30, name="prompt_1")
+    phantom.prompt(container=container, user=user, message=message, respond_in_mins=120, name="DogedogeDogedogeDogedogeDogedogeDogedoge")
 
     return
 
@@ -66,6 +72,17 @@ def prompt_3(action=None, success=None, container=None, results=None, handle=Non
     }
 
     phantom.prompt(container=container, user=user, message=message, respond_in_mins=30, name="prompt_3", options=options)
+
+    return
+
+def task_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+    phantom.debug('task_1() called')
+    
+    # set user and message variables for phantom.task call
+    user = "Administrator"
+    message = "DogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedogeDogedoge"
+
+    phantom.task(user=user, message=message, respond_in_mins=1337, name="task_1")
 
     return
 
