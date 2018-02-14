@@ -11,6 +11,9 @@ def on_start(container):
     # call 'analyze_file_1' block
     analyze_file_1(container=container)
 
+    # call 'get_system_info_1' block
+    get_system_info_1(container=container)
+
     return
 
 def analyze_file_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
@@ -30,6 +33,27 @@ def analyze_file_1(action=None, success=None, container=None, results=None, hand
     })
 
     phantom.act("analyze file", parameters=parameters, app={ "name": 'Carbon Black Protection (Bit9)' }, reviewer="Administrator", name="analyze_file_1")
+
+    return
+
+def get_system_info_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+    phantom.debug('get_system_info_1() called')
+
+    # collect data for 'get_system_info_1' call
+    container_data = phantom.collect2(container=container, datapath=['artifact:*.cef.sourceHostName', 'artifact:*.id'])
+
+    parameters = []
+    
+    # build parameters list for 'get_system_info_1' call
+    for container_item in container_data:
+        parameters.append({
+            'ip_hostname': container_item[0],
+            'sensor_id': "",
+            # context (artifact id) is added to associate results with the artifact
+            'context': {'artifact_id': container_item[1]},
+        })
+
+    phantom.act("get system info", parameters=parameters, app={ "name": 'Carbon Black Response' }, reviewer="Administrator", name="get_system_info_1")
 
     return
 

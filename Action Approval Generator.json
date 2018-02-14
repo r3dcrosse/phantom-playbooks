@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "fe2d4668e4b0c5e5ceece5d501697bd33d1ac291",
+            "hash": "58e1e7aeb2a83cf0a6fc829643aa9715b9559c1f",
             "joint": {
                 "cells": [
                     {
@@ -47,7 +47,7 @@
                                 "display": "block"
                             }
                         },
-                        "block_code": "def on_start(container):\n    phantom.debug('on_start() called')\n    \n    # call 'analyze_file_1' block\n    analyze_file_1(container=container)\n\n    return",
+                        "block_code": "def on_start(container):\n    phantom.debug('on_start() called')\n    \n    # call 'analyze_file_1' block\n    analyze_file_1(container=container)\n\n    # call 'get_system_info_1' block\n    get_system_info_1(container=container)\n\n    return",
                         "callback_code": "# read-only block view not available",
                         "callback_start": 1,
                         "callsback": false,
@@ -68,7 +68,7 @@
                         "join_code": "# read-only block view not available",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 16,
+                        "line_end": 19,
                         "line_start": 8,
                         "name": "",
                         "notes": "",
@@ -130,7 +130,7 @@
                         },
                         "position": {
                             "x": 100,
-                            "y": 100
+                            "y": 80
                         },
                         "previous_function": "",
                         "previous_name": "",
@@ -202,8 +202,8 @@
                         "join_code": "# read-only block view not available",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 49,
-                        "line_start": 36,
+                        "line_end": 73,
+                        "line_start": 60,
                         "name": "",
                         "notes": "",
                         "number": 0,
@@ -540,8 +540,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 36,
-                        "line_start": 16,
+                        "line_end": 39,
+                        "line_start": 19,
                         "message": "Configuring now",
                         "name": "analyze file",
                         "notes": "",
@@ -625,6 +625,511 @@
                         "type": "coa.Action",
                         "warn": "",
                         "z": 5
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#6C7A89",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#6a6c8a",
+                                "stroke": "#6a6c8a"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "2591767a-c7cd-4ab0-bac5-1dbcbd89162e",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "8c3e1080-ea91-43fd-bbf1-d7ccfd75cee2",
+                            "port": null,
+                            "selector": "g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "742deec6-6f1f-4de5-91b9-218374e90816",
+                            "selector": ".port-body[type=\"input\"]"
+                        },
+                        "type": "link",
+                        "z": 6
+                    },
+                    {
+                        "action": "get system info",
+                        "action_type": "investigate",
+                        "active": false,
+                        "active_keys": {},
+                        "active_values": {
+                            "ip_hostname": "artifact:*.cef.sourceHostName",
+                            "sensor_id": ""
+                        },
+                        "angle": 0,
+                        "app": "Carbon Black Response",
+                        "approver": "",
+                        "assets": [
+                            {
+                                "action": "get system info",
+                                "active": true,
+                                "app_name": "Carbon Black Response",
+                                "app_version": "1.2.86",
+                                "config_type": "app",
+                                "fields": {
+                                    "ip_hostname": "artifact:*.cef.sourceHostName",
+                                    "sensor_id": ""
+                                },
+                                "id": 99,
+                                "loaded": false,
+                                "missing": false,
+                                "name": "Carbon Black Response",
+                                "output": [
+                                    {
+                                        "contains": [
+                                            "carbon black sensor id"
+                                        ],
+                                        "data_path": "action_result.parameter.sensor_id",
+                                        "data_type": "numeric"
+                                    },
+                                    {
+                                        "contains": [
+                                            "host name",
+                                            "ip"
+                                        ],
+                                        "data_path": "action_result.parameter.ip_hostname",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.status",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.message",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.systemvolume_total_size",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "OS",
+                                        "column_order": 4,
+                                        "data_path": "action_result.data.*.os_environment_display_string",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.systemvolume_free_size",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.physical_memory_size",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.shard_id",
+                                        "data_type": "numeric"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.clock_delta",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.supports_cblr",
+                                        "data_type": "boolean"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.sensor_uptime",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Is Isolated?",
+                                        "column_order": 2,
+                                        "data_path": "action_result.data.*.is_isolating",
+                                        "data_type": "boolean"
+                                    },
+                                    {
+                                        "column_name": "Sensor ID",
+                                        "column_order": 5,
+                                        "contains": [
+                                            "carbon black sensor id"
+                                        ],
+                                        "data_path": "action_result.data.*.id",
+                                        "data_type": "numeric"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.build_id",
+                                        "data_type": "numeric"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.uptime",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "DNS Name",
+                                        "column_order": 3,
+                                        "data_path": "action_result.data.*.computer_dns_name",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.last_update",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.power_state",
+                                        "data_type": "numeric"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.next_checkin_time",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Status",
+                                        "column_order": 2,
+                                        "data_path": "action_result.data.*.status",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.num_eventlog_bytes",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.sensor_health_status",
+                                        "data_type": "numeric"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.sensor_health_message",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.build_version_string",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.computer_sid",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.node_id",
+                                        "data_type": "numeric"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.cookie",
+                                        "data_type": "numeric"
+                                    },
+                                    {
+                                        "column_name": "Name",
+                                        "column_order": 0,
+                                        "contains": [
+                                            "host name"
+                                        ],
+                                        "data_path": "action_result.data.*.computer_name",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.license_expiration",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Supports Isolation?",
+                                        "column_order": 4,
+                                        "data_path": "action_result.data.*.supports_isolation",
+                                        "data_type": "boolean"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.parity_host_id",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.supports_2nd_gen_modloads",
+                                        "data_type": "boolean"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.network_adapters",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "IP Addresses",
+                                        "column_order": 1,
+                                        "data_path": "action_result.data.*.ips",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Isolation Enabled?",
+                                        "column_order": 3,
+                                        "data_path": "action_result.data.*.network_isolation_enabled",
+                                        "data_type": "boolean"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.registration_time",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.restart_queued",
+                                        "data_type": "boolean"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.num_storefiles_bytes",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.os_environment_id",
+                                        "data_type": "numeric"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.boot_id",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.last_checkin_time",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.group_id",
+                                        "data_type": "numeric"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.display",
+                                        "data_type": "boolean"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.uninstall",
+                                        "data_type": "boolean"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.event_log_flush_time",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.emet_telemetry_path",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.emet_version",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.emet_report_setting",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.emet_exploit_action",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.emet_is_gpo",
+                                        "data_type": "boolean"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.emet_dump_flags",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.summary.total_endpoints",
+                                        "data_type": "numeric"
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects",
+                                        "data_type": "numeric"
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects_successful",
+                                        "data_type": "numeric"
+                                    }
+                                ],
+                                "parameters": {
+                                    "ip_hostname": {
+                                        "contains": [
+                                            "host name",
+                                            "ip"
+                                        ],
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Hostname/IP address to get info of",
+                                        "key": "ip_hostname",
+                                        "order": 0,
+                                        "primary": true,
+                                        "required": false
+                                    },
+                                    "sensor_id": {
+                                        "contains": [
+                                            "carbon black sensor id"
+                                        ],
+                                        "data_type": "numeric",
+                                        "default": null,
+                                        "description": "Carbon Black sensor id",
+                                        "key": "sensor_id",
+                                        "order": 1,
+                                        "primary": true,
+                                        "required": false
+                                    }
+                                },
+                                "product_name": "Carbon Black",
+                                "product_vendor": "Bit9",
+                                "type": ""
+                            }
+                        ],
+                        "attrs": {
+                            ".action": {
+                                "text": "get system info"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "Investigate"
+                            },
+                            "g.approver image": {
+                                "xlink:href": "/inc/coa/img/block_icon_approver_on.svg"
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.icon image": {
+                                "xlink:href": "/inc/coa/img/block_icon_investigate.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            }
+                        },
+                        "block_code": "def get_system_info_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('get_system_info_1() called')\n\n    # collect data for 'get_system_info_1' call\n    container_data = phantom.collect2(container=container, datapath=['artifact:*.cef.sourceHostName', 'artifact:*.id'])\n\n    parameters = []\n    \n    # build parameters list for 'get_system_info_1' call\n    for container_item in container_data:\n        parameters.append({\n            'ip_hostname': container_item[0],\n            'sensor_id': \"\",\n            # context (artifact id) is added to associate results with the artifact\n            'context': {'artifact_id': container_item[1]},\n        })\n\n    phantom.act(\"get system info\", parameters=parameters, app={ \"name\": 'Carbon Black Response' }, reviewer=\"Administrator\", name=\"get_system_info_1\")\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": true,
+                        "color": "",
+                        "connected_to_start": true,
+                        "connection_name": "",
+                        "connection_type": "",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "delay": "0",
+                        "description": "",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "742deec6-6f1f-4de5-91b9-218374e90816",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 60,
+                        "line_start": 39,
+                        "message": "Configuring now",
+                        "name": "get system info",
+                        "notes": "",
+                        "number": 1,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 720,
+                            "y": 560
+                        },
+                        "previous_function": "",
+                        "previous_name": "get_system_info_1",
+                        "required_params": {},
+                        "reviewer": "Administrator",
+                        "show_number": false,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "app_action_config",
+                        "status": "",
+                        "title": "Investigate",
+                        "type": "coa.Action",
+                        "warn": "",
+                        "z": 7
                     }
                 ]
             },
@@ -633,7 +1138,7 @@
         "schema": 3,
         "version": "3.5.150"
     },
-    "create_time": "2018-02-14T19:01:30.079615+00:00",
+    "create_time": "2018-02-14T19:04:50.090866+00:00",
     "draft_mode": false,
     "labels": [
         "*"
