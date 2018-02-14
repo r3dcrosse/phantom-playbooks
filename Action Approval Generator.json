@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "58e1e7aeb2a83cf0a6fc829643aa9715b9559c1f",
+            "hash": "fd662c7c8a0861d0dd6c17223a1bb630182ec96e",
             "joint": {
                 "cells": [
                     {
@@ -47,7 +47,7 @@
                                 "display": "block"
                             }
                         },
-                        "block_code": "def on_start(container):\n    phantom.debug('on_start() called')\n    \n    # call 'analyze_file_1' block\n    analyze_file_1(container=container)\n\n    # call 'get_system_info_1' block\n    get_system_info_1(container=container)\n\n    return",
+                        "block_code": "def on_start(container):\n    phantom.debug('on_start() called')\n    \n    # call 'analyze_file_1' block\n    analyze_file_1(container=container)\n\n    # call 'get_system_info_1' block\n    get_system_info_1(container=container)\n\n    # call 'enable_user_1' block\n    enable_user_1(container=container)\n\n    return",
                         "callback_code": "# read-only block view not available",
                         "callback_start": 1,
                         "callsback": false,
@@ -68,7 +68,7 @@
                         "join_code": "# read-only block view not available",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 19,
+                        "line_end": 22,
                         "line_start": 8,
                         "name": "",
                         "notes": "",
@@ -202,8 +202,8 @@
                         "join_code": "# read-only block view not available",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 73,
-                        "line_start": 60,
+                        "line_end": 92,
+                        "line_start": 79,
                         "name": "",
                         "notes": "",
                         "number": 0,
@@ -261,8 +261,8 @@
                             }
                         },
                         "position": {
-                            "x": 920,
-                            "y": 100
+                            "x": 1440,
+                            "y": 140
                         },
                         "previous_function": "",
                         "previous_name": "",
@@ -540,8 +540,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 39,
-                        "line_start": 19,
+                        "line_end": 42,
+                        "line_start": 22,
                         "message": "Configuring now",
                         "name": "analyze file",
                         "notes": "",
@@ -602,8 +602,8 @@
                             }
                         },
                         "position": {
-                            "x": 580,
-                            "y": 280
+                            "x": 240,
+                            "y": 220
                         },
                         "previous_function": "",
                         "previous_name": "unblock_ip_1",
@@ -1050,8 +1050,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 60,
-                        "line_start": 39,
+                        "line_end": 63,
+                        "line_start": 42,
                         "message": "Configuring now",
                         "name": "get system info",
                         "notes": "",
@@ -1112,8 +1112,8 @@
                             }
                         },
                         "position": {
-                            "x": 720,
-                            "y": 560
+                            "x": 240,
+                            "y": 360
                         },
                         "previous_function": "",
                         "previous_name": "get_system_info_1",
@@ -1130,6 +1130,277 @@
                         "type": "coa.Action",
                         "warn": "",
                         "z": 7
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#6C7A89",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#6a6c8a",
+                                "stroke": "#6a6c8a"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "418730f2-3d7e-4deb-b7cf-a898ab2b353b",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "8c3e1080-ea91-43fd-bbf1-d7ccfd75cee2",
+                            "port": null,
+                            "selector": "g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "149a0b30-26dc-4e72-a516-139515bd2dd3",
+                            "selector": ".port-body[type=\"input\"]"
+                        },
+                        "type": "link",
+                        "z": 8
+                    },
+                    {
+                        "action": "enable user",
+                        "action_type": "correct",
+                        "active": false,
+                        "active_keys": {},
+                        "active_values": {
+                            "username": "lolcat"
+                        },
+                        "angle": 0,
+                        "app": "",
+                        "approver": "",
+                        "assets": [
+                            {
+                                "action": "enable user",
+                                "active": true,
+                                "app_name": "LDAP",
+                                "app_version": "1.2.35",
+                                "asset_name": "domainctrl1",
+                                "config_type": "asset",
+                                "count": 0,
+                                "fields": {
+                                    "username": "lolcat"
+                                },
+                                "id": 38,
+                                "loaded": false,
+                                "missing": false,
+                                "name": "domainctrl1",
+                                "output": [
+                                    {
+                                        "data_path": "action_result.status",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Username",
+                                        "column_order": 0,
+                                        "contains": [
+                                            "user name"
+                                        ],
+                                        "data_path": "action_result.parameter.username",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Message",
+                                        "column_order": 1,
+                                        "data_path": "action_result.message",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects",
+                                        "data_type": "numeric"
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects_successful",
+                                        "data_type": "numeric"
+                                    }
+                                ],
+                                "parameters": {
+                                    "username": {
+                                        "contains": [
+                                            "user name"
+                                        ],
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Username to enable",
+                                        "key": "username",
+                                        "order": 0,
+                                        "primary": true,
+                                        "required": true
+                                    }
+                                },
+                                "product_name": "Windows Server",
+                                "product_vendor": "Microsoft",
+                                "targets": "5",
+                                "type": ""
+                            }
+                        ],
+                        "attrs": {
+                            ".action": {
+                                "text": "enable user"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "Correct"
+                            },
+                            "g.approver image": {
+                                "xlink:href": "/inc/coa/img/block_icon_approver_on.svg"
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.icon image": {
+                                "xlink:href": "/inc/coa/img/block_icon_correct.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            }
+                        },
+                        "block_code": "def enable_user_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('enable_user_1() called')\n\n    # collect data for 'enable_user_1' call\n\n    parameters = []\n    \n    # build parameters list for 'enable_user_1' call\n    parameters.append({\n        'username': \"lolcat\",\n    })\n\n    phantom.act(\"enable user\", parameters=parameters, assets=['domainctrl1'], reviewer=\"admin\", name=\"enable_user_1\")\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": true,
+                        "color": "",
+                        "connected_to_start": true,
+                        "connection_name": "",
+                        "connection_type": "",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "delay": "0",
+                        "description": "",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "149a0b30-26dc-4e72-a516-139515bd2dd3",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 79,
+                        "line_start": 63,
+                        "message": "Configuring now",
+                        "name": "enable user",
+                        "notes": "",
+                        "number": 1,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 240,
+                            "y": 500
+                        },
+                        "previous_function": "",
+                        "previous_name": "enable_user_1",
+                        "required_params": {
+                            "username": true
+                        },
+                        "reviewer": "admin",
+                        "show_number": false,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "action_assets",
+                        "status": "",
+                        "title": "Correct",
+                        "type": "coa.Action",
+                        "warn": "",
+                        "z": 9
                     }
                 ]
             },
@@ -1138,7 +1409,7 @@
         "schema": 3,
         "version": "3.5.150"
     },
-    "create_time": "2018-02-14T19:04:50.090866+00:00",
+    "create_time": "2018-02-14T19:20:55.886104+00:00",
     "draft_mode": false,
     "labels": [
         "*"

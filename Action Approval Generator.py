@@ -14,6 +14,9 @@ def on_start(container):
     # call 'get_system_info_1' block
     get_system_info_1(container=container)
 
+    # call 'enable_user_1' block
+    enable_user_1(container=container)
+
     return
 
 def analyze_file_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
@@ -54,6 +57,22 @@ def get_system_info_1(action=None, success=None, container=None, results=None, h
         })
 
     phantom.act("get system info", parameters=parameters, app={ "name": 'Carbon Black Response' }, reviewer="Administrator", name="get_system_info_1")
+
+    return
+
+def enable_user_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+    phantom.debug('enable_user_1() called')
+
+    # collect data for 'enable_user_1' call
+
+    parameters = []
+    
+    # build parameters list for 'enable_user_1' call
+    parameters.append({
+        'username': "lolcat",
+    })
+
+    phantom.act("enable user", parameters=parameters, assets=['domainctrl1'], reviewer="admin", name="enable_user_1")
 
     return
 
