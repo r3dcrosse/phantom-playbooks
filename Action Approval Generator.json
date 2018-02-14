@@ -7,7 +7,6 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "fd662c7c8a0861d0dd6c17223a1bb630182ec96e",
             "joint": {
                 "cells": [
                     {
@@ -602,8 +601,8 @@
                             }
                         },
                         "position": {
-                            "x": 240,
-                            "y": 220
+                            "x": 560,
+                            "y": 160
                         },
                         "previous_function": "",
                         "previous_name": "unblock_ip_1",
@@ -1112,8 +1111,8 @@
                             }
                         },
                         "position": {
-                            "x": 240,
-                            "y": 360
+                            "x": 580,
+                            "y": 320
                         },
                         "previous_function": "",
                         "previous_name": "get_system_info_1",
@@ -1381,7 +1380,7 @@
                             }
                         },
                         "position": {
-                            "x": 240,
+                            "x": 580,
                             "y": 500
                         },
                         "previous_function": "",
@@ -1400,7 +1399,7 @@
                         "title": "Correct",
                         "type": "coa.Action",
                         "warn": "",
-                        "z": 9
+                        "z": 12
                     }
                 ]
             },
