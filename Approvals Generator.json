@@ -1042,6 +1042,6 @@
     "create_time": "2018-02-05T18:29:18+00:00",
     "draft_mode": false,
     "labels": [
-        "atp incident"
+        "*"
     ]
 }
